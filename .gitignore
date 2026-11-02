@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+work/
+.ipynb_checkpoints/
+data/raw/
+data/processed/
+results/*
+!results/README.md
+*.log
+.DS_Store
+

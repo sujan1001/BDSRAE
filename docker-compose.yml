@@ -1,0 +1,10 @@
+services:
+  retrieval-fairness:
+    build: .
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      PYTHONPATH: /workspace/src
+    command: python scripts/run_pipeline.py --config configs/smoke.json
+

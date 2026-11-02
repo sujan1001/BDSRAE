@@ -1,0 +1,9 @@
+source_id,name,source_type,license_or_status,languages,coverage,url,use_in_smoke
+SYNTH-001,Capstone synthetic parallel public-service set,synthetic,Project-created synthetic data; no personal data,en hi ml,"pension; water; emergency",local file,yes
+FLORES-200,FLORES-200,parallel benchmark,CC-BY-SA-4.0,200 languages including hi and ml,translation evaluation,https://github.com/facebookresearch/flores,no
+MIRACL,MIRACL,multilingual retrieval benchmark,Apache-2.0 for released dataset metadata; source attribution applies,en hi but not ml,retrieval qrels,https://github.com/project-miracl/miracl,no
+SAMANANTAR,Samanantar,parallel corpus,CC0 packaging; verify source-text rights,en hi ml,English-Indic parallel sentences,https://indicnlp.ai4bharat.org/samanantar/,no
+INDICQA,IndicQA,question answering dataset,CC-BY-4.0,en hi ml,Indic QA evaluation,https://huggingface.co/datasets/ai4bharat/IndicQA,no
+INDICCORP,AI4Bharat IndicCorp,monolingual corpus,CC-BY-NC-SA-4.0 per repository; verify release,hi ml,Indic monolingual text,https://github.com/AI4Bharat/indicnlp_corpus,no
+WIKI-INDIC,Malayalam and Hindi Wikipedia,encyclopedic corpus,Verify current Wikimedia terms and attribution,hi ml,parallel/aligned document construction,https://dumps.wikimedia.org/,no
+

@@ -1,0 +1,60 @@
+{
+  "run_scope": "smoke_test_on_synthetic_parallel_documents",
+  "data": {
+    "documents": "data/sample_parallel_documents.jsonl",
+    "queries": "data/sample_queries.jsonl"
+  },
+  "output_dir": "results/smoke",
+  "evaluation": {
+    "cross_language": false
+  },
+  "systems": {
+    "scale_points": [9, 90, 900],
+    "partitions": 4
+  },
+  "experiments": [
+    {
+      "id": "bm25",
+      "label": "BM25 lexical baseline",
+      "method": "bm25",
+      "mitigation": "none",
+      "model": {"id": "bm25", "backend": "hashing", "dimensions": 64}
+    },
+    {
+      "id": "labse",
+      "label": "LaBSE dense baseline (optional model; deterministic fallback in smoke test)",
+      "method": "dense",
+      "mitigation": "none",
+      "model": {"id": "labse", "backend": "sentence_transformers", "model_name": "sentence-transformers/LaBSE", "fallback_dimensions": 256}
+    },
+    {
+      "id": "multilingual_e5_base",
+      "label": "multilingual-e5-base dense baseline (optional model; deterministic fallback in smoke test)",
+      "method": "dense",
+      "mitigation": "none",
+      "model": {"id": "multilingual-e5-base", "backend": "sentence_transformers", "model_name": "intfloat/multilingual-e5-base", "fallback_dimensions": 256}
+    },
+    {
+      "id": "hybrid",
+      "label": "BM25 + dense reciprocal-rank fusion",
+      "method": "hybrid",
+      "mitigation": "none",
+      "model": {"id": "hybrid-hashing", "backend": "hashing", "dimensions": 256}
+    },
+    {
+      "id": "translation",
+      "label": "Translate-to-English query mitigation pilot",
+      "method": "dense",
+      "mitigation": "translation",
+      "model": {"id": "translation-hashing", "backend": "hashing", "dimensions": 256}
+    },
+    {
+      "id": "alignment_pilot",
+      "label": "Supervised alignment feature pilot",
+      "method": "dense",
+      "mitigation": "alignment_pilot",
+      "model": {"id": "alignment-hashing", "backend": "hashing", "dimensions": 256}
+    }
+  ]
+}
+

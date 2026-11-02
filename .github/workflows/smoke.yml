@@ -1,0 +1,23 @@
+name: smoke-test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run offline smoke pipeline
+        run: python scripts/run_pipeline.py --config configs/smoke.json
+      - name: Check result files
+        run: |
+          test -s results/smoke/metrics.csv
+          test -s results/smoke/fairness_summary.json
+          test -s results/smoke/system_metrics.json
+          test -s results/smoke/run_manifest.json
+
