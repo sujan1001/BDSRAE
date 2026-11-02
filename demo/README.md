@@ -1,5 +1,13 @@
 # Demo
 
+`demo_video.avi` is a dependency-light, three-minute visual companion built from the synthetic smoke fixture. It is intentionally silent and pairs with `demo_script.md` for narration; it does not record a user's screen, voice or personal data.
+
+To rebuild it offline:
+
+```text
+python scripts/build_demo_video.py
+```
+
 The demo is intentionally scripted so it can be recorded in approximately three minutes without exposing private data or requiring a live external service.
 
 1. Show the repository and run the smoke command.

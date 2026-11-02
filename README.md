@@ -44,7 +44,7 @@ flowchart LR
 | 3-5 page technical report | `report/technical_report.md` and `report/technical_report.pdf` |
 | Data card | `cards/data_card.md` |
 | Model card | `cards/model_card.md` |
-| Demo | `demo/demo_script.md` and `demo/README.md` |
+| 3-minute demo | `demo/demo_video.avi`, `demo/demo_script.md` and `demo/README.md` |
 | Dataset and licence register | `data/source_registry.csv` |
 | Phase-I planning artifacts | `docs/phase1/` |
 
